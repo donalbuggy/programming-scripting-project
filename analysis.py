@@ -8,6 +8,40 @@ df = pd.read_csv("iris.csv")
 print(df.head)
 print(df)
 
+
+## Histograms ##
+
+plt.hist(df.sepal_length, bins=20, edgecolor="black")
+plt.legend()
+plt.title("Sepal Length")
+plt.xlabel("Length (mm)")
+plt.ylabel("Frequency")
+plt.show()
+
+plt.hist(df.sepal_width, bins=20, edgecolor="black")
+plt.legend()
+plt.title("Sepal Width")
+plt.xlabel("Width (mm)")
+plt.ylabel("Frequency")
+plt.show()
+
+plt.hist(df.petal_length, bins=20, edgecolor="black")
+plt.legend()
+plt.title("Petal Length")
+plt.xlabel("Length (mm)")
+plt.ylabel("Frequency")
+plt.show()
+
+plt.hist(df.petal_width, bins=20, edgecolor="black")
+plt.legend()
+plt.title("Petal Width")
+plt.xlabel("Width (mm)")
+plt.ylabel("Frequency")
+plt.show()
+
+
+## Scatterplots ##
+
 plpw = sns.scatterplot(x="petal_length", y="petal_width", hue="species", data=df)
 plpw.set(xscale="linear")
 plt.savefig("pl_pw.png")
