@@ -4,7 +4,7 @@ import seaborn as sns
 import numpy as np
 import csv
 
-df = pd.read_csv("iris.csv")
+df = pd.read_csv("irisdataset.csv")
 print(df.head)
 print(df)
 
@@ -12,31 +12,31 @@ print(df)
 ## Histograms ##
 
 plt.hist(df.sepal_length, bins=20, edgecolor="black")
-plt.legend()
 plt.title("Sepal Length")
-plt.xlabel("Length (mm)")
+plt.xlabel("Length (cm)")
 plt.ylabel("Frequency")
+plt.savefig("sl_hist.png")
 plt.show()
 
 plt.hist(df.sepal_width, bins=20, edgecolor="black")
-plt.legend()
 plt.title("Sepal Width")
-plt.xlabel("Width (mm)")
+plt.xlabel("Width (cm)")
 plt.ylabel("Frequency")
+plt.savefig("sw_hist.png")
 plt.show()
 
 plt.hist(df.petal_length, bins=20, edgecolor="black")
-plt.legend()
 plt.title("Petal Length")
-plt.xlabel("Length (mm)")
+plt.xlabel("Length (cm)")
 plt.ylabel("Frequency")
+plt.savefig("pl_hist.png")
 plt.show()
 
 plt.hist(df.petal_width, bins=20, edgecolor="black")
-plt.legend()
 plt.title("Petal Width")
-plt.xlabel("Width (mm)")
+plt.xlabel("Width (cm)")
 plt.ylabel("Frequency")
+plt.savefig("pw_hist.png")
 plt.show()
 
 
