@@ -51,6 +51,8 @@ print("The summary text file has been added to " + os.getcwd())
 # the number of bins, title and axis labels are defined also
 # the generated PNGs are saved to the same location as the summary text file using the savefig() function
 
+print("Generating histograms ...")
+
 plt.hist(df.sepal_length, bins=20, edgecolor="black")
 plt.title("Sepal Length")
 plt.xlabel("Length (cm)")
@@ -86,6 +88,8 @@ print("The histogram images have been added to " + os.getcwd())
 
 # the seaborn package is passed the df variable in the "data" attribute using the scatterplot() function
 # the generated plots are saved to the same directory as the text file and histograms
+
+print("Generating scatterplots ...")
 
 plpw = sns.scatterplot(x="petal_length", y="petal_width", hue="species", data=df)
 plpw.set(xscale="linear")
