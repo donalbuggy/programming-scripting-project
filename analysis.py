@@ -3,10 +3,24 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 import csv
+import statistics
 
 df = pd.read_csv("irisdataset.csv")
 print(df.head)
 print(df)
+
+## Summary ##
+
+describeStats = str(df.describe())
+medianStats = str("median     " + str(statistics.median(df.sepal_length)) + "00000" + "     " + str(statistics.median(df.sepal_width)) + "00000" + "      " + str(statistics.median(df.petal_length)) + "0000" + "     " + str(statistics.median(df.petal_width)) + "00000")
+
+modeStats = str("mode       " + str(statistics.mode(df.sepal_length)) + "00000" + "     " + str(statistics.mode(df.sepal_width)) + "00000" + "      " + str(statistics.mode(df.petal_length)) + "00000" + "     " + str(statistics.mode(df.petal_width)) + "00000")
+
+summaryText = open("summary.txt", "w")
+
+summaryText.write("Summary of statistical information on Fisher's iris data set:" + "\n" + "\n")
+summaryText.write(describeStats + "\n" + medianStats + "\n" + modeStats)
+summaryText.close()
 
 
 ## Histograms ##
