@@ -4,9 +4,9 @@ import seaborn as sns
 import numpy as np
 import csv
 import statistics
+import os
 
 df = pd.read_csv("irisdataset.csv")
-print(df.head)
 print(df)
 
 ## Summary ##
@@ -21,6 +21,10 @@ summaryText = open("summary.txt", "w")
 summaryText.write("Summary of statistical information on Fisher's iris data set:" + "\n" + "\n")
 summaryText.write(describeStats + "\n" + medianStats + "\n" + modeStats)
 summaryText.close()
+
+cwd = os.getcwd
+
+print("This file has been added to " + cwd)
 
 
 ## Histograms ##
@@ -52,6 +56,8 @@ plt.xlabel("Width (cm)")
 plt.ylabel("Frequency")
 plt.savefig("pw_hist.png")
 plt.show()
+
+print("These images have been added to " + cwd)
 
 
 ## Scatterplots ##
@@ -89,3 +95,5 @@ plt.show()
 sns.pairplot(df, hue="species")
 plt.savefig("species_matrix.png")
 plt.show()
+
+print("These images have been added to " + cwd)
